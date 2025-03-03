@@ -34,7 +34,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://hst-techteam.github.com/app",
+  "homepage": "https://hst-techteam.github.io/",
   "browserslist": {
     "production": [
       ">0.2%",
