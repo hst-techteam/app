@@ -1,0 +1,45 @@
+.footer {
+  background-color: $bg-alt-color;
+  padding: $spacing-md 0;
+  margin-top: $spacing-xl;
+  border-top: 1px solid $border-color;
+  
+  &__container {
+    @include container;
+    @include flex-between;
+    
+    @include respond-to(small) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  &__links {
+    display: flex;
+    
+    @include respond-to(small) {
+      margin-bottom: $spacing-sm;
+      justify-content: center;
+    }
+  }
+  
+  &__link {
+    color: $light-text;
+    text-decoration: none;
+    margin-right: $spacing-md;
+    @include transition;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  
+  &__copyright {
+    color: $light-text;
+    font-size: 0.9rem;
+  }
+}

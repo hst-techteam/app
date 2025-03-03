@@ -1,0 +1,174 @@
+// styles/pages/_home.scss
+.home {
+    &__title {
+      font-size: $h1-font-size;
+      padding-bottom: $spacing-xl;
+      color: $text-color;
+      text-align: center;
+    }
+    
+    &__hero {
+      background-color: $primary-color;
+      padding: $spacing-xl $spacing-md;
+      margin: -$spacing-lg -$spacing-md $spacing-xl;
+      border-radius: 4px;
+      
+      @include respond-to(medium) {
+        margin: -$spacing-lg 0 $spacing-xl;
+        padding: $spacing-xl;
+        border-radius: 8px;
+      }
+      
+      &-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      
+      &-title {
+        font-size: $h1-font-size;
+        margin-bottom: $spacing-md;
+        color: white;
+      }
+      
+      &-text {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: $spacing-md;
+      }
+    }
+    
+    &__section {
+      margin-bottom: $spacing-xl;
+      
+      &-title {
+        font-size: $h2-font-size;
+        margin-bottom: $spacing-md;
+        color: $text-color;
+        text-align: center;
+      }
+      
+      &-text {
+        line-height: 1.6;
+        color: $light-text;
+        max-width: 800px;
+        margin: 0 auto $spacing-lg;
+        text-align: center;
+      }
+    }
+    
+    &__services {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: $spacing-md;
+      
+      @include respond-to(medium) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @include respond-to(large) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    &__service {
+      background-color: $bg-alt-color;
+      padding: $spacing-md;
+      border-radius: 4px;
+      @include box-shadow;
+      
+      &-title {
+        font-size: $h4-font-size;
+        margin-bottom: $spacing-sm;
+        color: $primary-color;
+      }
+      
+      &-text {
+        line-height: 1.5;
+        color: $light-text;
+      }
+    }
+    
+    &__how-it-works {
+      margin-bottom: $spacing-xl;
+    }
+    
+    &__steps {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: $spacing-md;
+      max-width: 1000px;
+      margin: 0 auto;
+      
+      @include respond-to(medium) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    &__step {
+      text-align: center;
+      padding: $spacing-md;
+      
+      &-number {
+        width: 40px;
+        height: 40px;
+        background-color: $primary-color;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto $spacing-sm;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      
+      &-title {
+        font-size: $h4-font-size;
+        margin-bottom: $spacing-sm;
+        color: $text-color;
+      }
+      
+      &-text {
+        color: $light-text;
+      }
+    }
+    
+    &__cta {
+      background-color: $bg-alt-color;
+      padding: $spacing-lg;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: $spacing-lg;
+      
+      &-title {
+        font-size: $h3-font-size;
+        margin-bottom: $spacing-sm;
+        color: $text-color;
+      }
+      
+      &-text {
+        margin-bottom: $spacing-md;
+        color: white;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      &-button {
+        display: inline-block;
+        background-color: $primary-color;
+        color: white;
+        padding: $spacing-sm $spacing-md;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        @include transition;
+        
+        &:hover {
+          background-color: darken($primary-color, 50%);
+        }
+      }
+    }
+  }

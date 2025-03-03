@@ -1,0 +1,53 @@
+.header {
+    background-color: $bg-color;
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid $border-color;
+    
+    &__container {
+      @include container;
+      @include flex-between;
+    }
+    
+    &__logo {
+      font-size: $h3-font-size;
+      font-weight: bold;
+      
+      &-link {
+        color: $primary-color;
+        text-decoration: none;
+        @include transition;
+        
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+      }
+    }
+    
+    &__nav {
+      &-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      &-item {
+        margin-left: $spacing-md;
+        
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      
+      &-link {
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 500;
+        @include transition;
+        
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }

@@ -1,0 +1,304 @@
+// ContactPage.scss
+
+// Colors
+$primary-color: #4a90e2;
+$secondary-color: #50e3c2;
+$text-color: #333333;
+$light-text: #666666;
+$bg-color: #ffffff;
+$bg-alt-color: #f8f8f8;
+$border-color: #e1e1e1;
+$error-color: #e74c3c;
+$success-color: #27ae60;
+$card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$transition-speed: 0.3s;
+
+// Typography
+$base-font-family: 'Roboto', sans-serif;
+$heading-font-family: 'Montserrat', sans-serif;
+$base-font-size: 16px;
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 3rem;
+$spacing-xl: 4rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Container
+$container-width: 1140px;
+
+// Mixins
+@mixin card() {
+  background-color: $bg-color;
+  border-radius: 8px;
+  box-shadow: $card-shadow;
+  padding: $spacing-md;
+}
+
+@mixin heading($size) {
+  font-family: $heading-font-family;
+  color: $primary-color;
+  margin-bottom: $spacing-sm;
+  font-size: $size;
+  font-weight: 600;
+}
+
+@mixin form-element() {
+  width: 100%;
+  padding: $spacing-sm;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  transition: border $transition-speed;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+
+@mixin responsive-container() {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+// Main contact block
+.contact {
+  font-family: $base-font-family;
+  line-height: 1.6;
+  color: $text-color;
+  @include responsive-container();
+  background-color: $bg-alt-color;
+  
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    padding: $spacing-lg 0;
+  }
+  
+  &__title {
+    @include heading($h1-font-size);
+    margin-bottom: $spacing-xs;
+  }
+  
+  &__subtitle {
+    color: $light-text;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+  
+  &__container {
+    @include flex-row();
+    flex-wrap: wrap;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xl;
+    
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+    }
+  }
+  
+  &__footer {
+    margin-top: $spacing-xl;
+    text-align: center;
+    color: $light-text;
+    border-top: 1px solid $border-color;
+    padding-top: $spacing-md;
+  }
+  
+  &__footer-text {
+    margin: 0;
+  }
+}
+
+// Contact info block
+// Social Links inside Contact Info
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    @include card();
+  
+    &__item {
+      margin-bottom: $spacing-md;
+    }
+  
+    &__heading {
+      @include heading($h3-font-size);
+      margin-bottom: $spacing-xs;
+    }
+  
+    &__text {
+      margin: $spacing-xs 0;
+    }
+  
+    &__social {
+      display: flex;
+      justify-content: center; // Centers social icons
+      gap: $spacing-md;
+      margin-top: $spacing-md;
+      flex-wrap: wrap;
+    }
+  
+    &__social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $primary-color;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background-color $transition-speed, transform $transition-speed;
+      
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+
+// Contact form block
+.contact-form {
+  flex: 2;
+  min-width: 300px;
+  @include card();
+  
+  &__title {
+    @include heading($h2-font-size);
+    margin-bottom: $spacing-md;
+  }
+  
+  &__group {
+    margin-bottom: $spacing-md;
+  }
+  
+  &__label {
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-weight: 500;
+  }
+  
+  &__input, &__select {
+    @include form-element();
+    
+    &--error {
+      border-color: $error-color;
+    }
+  }
+  
+  &__textarea {
+    @include form-element();
+    height: 150px;
+    resize: vertical;
+    
+    &--error {
+      border-color: $error-color;
+    }
+  }
+  
+  &__error {
+    color: $error-color;
+    font-size: 0.9rem;
+    margin-top: $spacing-xs;
+    margin-bottom: 0;
+  }
+  
+  &__button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: 4px;
+    font-size: $base-font-size;
+    cursor: pointer;
+    transition: all $transition-speed;
+    font-weight: 500;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      transform: translateY(-2px);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  
+  &__success {
+    text-align: center;
+    padding: $spacing-md;
+  }
+  
+  &__success-title {
+    color: $success-color;
+    @include heading($h3-font-size);
+  }
+  
+  &__success-text {
+    margin-bottom: $spacing-md;
+  }
+}
+
+// Contact locations block
+.contact-locations {
+  margin-top: $spacing-xl;
+  
+  &__title {
+    text-align: center;
+    @include heading($h2-font-size);
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    justify-content: center;
+  }
+  
+  &__card {
+    @include card();
+    width: 280px;
+    transition: all $transition-speed;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  &__card-title {
+    @include heading($h4-font-size);
+    color: $primary-color;
+  }
+  
+  &__card-text {
+    margin: $spacing-xs 0;
+  }
+}

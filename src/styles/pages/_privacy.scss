@@ -1,0 +1,45 @@
+// styles/pages/_privacy.scss
+.privacy {
+    &__title {
+      font-size: $h1-font-size;
+      margin-bottom: $spacing-lg;
+      color: $text-color;
+    }
+    
+    &__content {
+      max-width: 800px;
+    }
+    
+    &__introduction {
+      line-height: 1.6;
+      color: $light-text;
+      margin-bottom: $spacing-lg;
+      font-size: 1.1rem;
+    }
+    
+    &__section {
+      margin-bottom: $spacing-lg;
+      
+      &-title {
+        font-size: $h3-font-size;
+        margin-bottom: $spacing-sm;
+        color: $text-color;
+      }
+      
+      &-text {
+        line-height: 1.6;
+        color: $light-text;
+        margin-bottom: $spacing-sm;
+      }
+    }
+    
+    &__list {
+      padding-left: $spacing-md;
+      margin-bottom: $spacing-md;
+      
+      &-item {
+        margin-bottom: $spacing-xs;
+        color: $light-text;
+      }
+    }
+  }
