@@ -25,7 +25,15 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script>
+      var path = window.location.pathname.split('/');
+      if (path[path.length - 1] && !path[path.length - 1].includes('.')) {
+          window.location.replace(window.location.origin + '/app' + '/#' + window.location.pathname);
+      }
+  </script>
+  
   </head>
+  
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
